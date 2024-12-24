@@ -7,7 +7,7 @@ from aiogram.filters import Command
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types.bot_command import BotCommand
 
-BOT_TOKEN = ""
+BOT_TOKEN = "7210002949:AAGkhUGyZ2e76bdKLLRKZRE4Wel1YCfA0hw"
 API_URL = "https://api.binance.com/api/v3/ticker/price"
 
 bot = Bot(token=BOT_TOKEN)
@@ -86,7 +86,7 @@ async def get_top_10(message: Message):
     current_prices = crypto_history.get(current_time, {})
     changes = await calculate_changes(target_time, current_prices)
 
-    sorted_coins = sorted(changes.items(), key=lambda x: abs(x[1] - threshold))
+    sorted_coins = sorted(changes.items(), key=lambda x: (abs(x[1] - threshold), -abs(x[1])))
     top_10 = sorted_coins[:10]
 
     if not top_10:
