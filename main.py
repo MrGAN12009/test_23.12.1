@@ -9,7 +9,7 @@ from aiogram.client.session.aiohttp import AiohttpSession
 import threading
 
 
-BOT_TOKEN = "7366620789:AAHVh92T3-jp1EXkE4bRWEaxNzBWAFoKERM"
+BOT_TOKEN = ""
 bot = Bot(token=BOT_TOKEN, session=AiohttpSession())
 storage = MemoryStorage()
 dp = Dispatcher(storage=storage)
